@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {ChannelsComponentFacade} from "./channels.component.facade";
 
 @Component({
   selector: 'app-channels',
@@ -8,9 +8,8 @@ import {BehaviorSubject} from "rxjs";
 })
 export class ChannelsComponent implements OnInit {
 
-  _channel$: BehaviorSubject<any> = new BehaviorSubject(null);
 
-  constructor() { }
+  constructor(_componentFacade: ChannelsComponentFacade) { }
 
   ngOnInit() {
   }
