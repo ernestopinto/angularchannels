@@ -4,4 +4,5 @@ export const ComponentCodeOperations = {
     Error: 666,
     error: 666,
     Warning: 112,
+    go: 1
 }

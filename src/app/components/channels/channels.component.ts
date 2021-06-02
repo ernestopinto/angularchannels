@@ -4,10 +4,10 @@ import {ChannelsComponentFacade} from "./channels.component.facade";
 @Component({
   selector: 'app-channels',
   templateUrl: './channels.component.html',
-  styleUrls: ['./channels.component.css']
+  styleUrls: ['./channels.component.css'],
+  providers: [ChannelsComponentFacade],
 })
 export class ChannelsComponent implements OnInit {
-
 
   constructor(_componentFacade: ChannelsComponentFacade) { }
 
