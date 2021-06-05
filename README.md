@@ -1,6 +1,6 @@
 # Angular Channels
 
-####This project is a demonstration of the use of a Behaviour Subjects single pattern regarding state transition on a very minimalistic but powerful way
+This project is a demonstration of the use of a Behaviour Subjects single pattern regarding state transition on a very minimalistic but powerful way
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
