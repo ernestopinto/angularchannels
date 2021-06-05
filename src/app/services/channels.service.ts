@@ -1,27 +1,29 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import {ChannelModel} from "../models/channels";
+import {startWith} from "rxjs/operators";
+import {ComponentCodeOperations} from "../env/environment";
+
+// this is de Service version of the channels pattern
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChannelsService {
 
-  _channel$: BehaviorSubject<ChannelModel> = new BehaviorSubject({
-    code:0
+  _channel$: BehaviorSubject<{code: number, payload?: any}> = new BehaviorSubject({
+    code: ComponentCodeOperations.ChangeColor,
+    payload: 'blue'
   });
 
-  /** Set the current budget row id */
-  setOnChannel(code: string | number | null, payload?: any) {
-    this._channel$.next({
-      code: code,
-      payload: payload ? payload : null
-    });
+  getChannel$(){
+    return this._channel$.asObservable().pipe(startWith({
+      code: ComponentCodeOperations.none,
+      payload: 'blue'
+    }))
   }
 
-  /** Exposes this channel */
-  getChannel() {
-    return this._channel$.asObservable();
+  pipeInChannel(operation: {code:number, payload?: any}){
+    this._channel$.next(operation);
   }
 
   constructor() { }
