@@ -1,1 +1,13 @@
-<p>channels works!</p>
+
+
+<div>
+    <button type="button" (click)="changeColor('red')">Change color to Red</button>
+    <button type="button" (click)="changeColor('blue')">Change color to Blue</button>
+    <button type="button" (click)="changeColorInToolBar('green')">Change Tool bar color to Green</button>
+</div>
+
+<div style="width: 100%">
+    <app-acomponent [channel$]="getChannel$() "
+    >
+    </app-acomponent>
+</div>
